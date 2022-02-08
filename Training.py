@@ -100,8 +100,8 @@ model_json = model.to_json()
 with open("model.json", "w") as json_file:
     json_file.write(model_json)
 # serialize weights to HDF5
-# model.save_weights("modelglllyyyom.h5")   #model 10 gia 200 epochs
-model.save_weights("LuISSSSSSito.h5")
+# model.save_weights("modellllym.h5")   #model 10 gia 200 epochs
+model.save_weights("ICTR.h5")
 print("Saved model to disk")
 
 acc = history.history['acc']
