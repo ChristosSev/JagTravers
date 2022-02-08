@@ -47,9 +47,9 @@ model.add(layers.Dense(64, activation='relu'))
 model.add(layers.Dropout(0.5))
 model.add(layers.Dense(32, activation='relu'))
 model.add(layers.Dropout(0.5))
-model.add(layers.Dense(2, activation='softmax')) # h softmax ?????   #### na dokimasw kai gia 1 output
+model.add(layers.Dense(2, activation='softmax')) 
 
-# Show a summary of the model. Check the number of trainable parameters
+# Shows a summary of the model
 model.summary()
 
 
