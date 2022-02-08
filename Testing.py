@@ -4,7 +4,6 @@ import matplotlib.gridspec as gridspec
 from keras.models import model_from_json
 from keras.preprocessing import image
 from keras.models import load_model
-from keras.applications.inception_v3 import InceptionV3, preprocess_input
 from keras.preprocessing.image import ImageDataGenerator,load_img
 from statistics import mean
 
@@ -57,67 +56,3 @@ print(len(listt))
 print(float(sum(listt)/len(listt)))
 
 
-# test_datagen = ImageDataGenerator(
-#    rescale=1. / 255)
-# #
-# #
-# test_generator = test_datagen.flow_from_directory(
-#      TEST_DIR,
-#      target_size=(HEIGHT, WIDTH),
-#      batch_size=BATCH_SIZE,
-#      class_mode='categorical')
-# #
-# fnames = test_generator.filenames
-# # # # Get the ground truth from generator
-# ground_truth = test_generator.classes
-# # #
-# # # # Get the label to class mapping from the generator
-# label2index = test_generator.class_indices
-# # #
-# # #
-# # # # Getting the mapping from class index to class label
-# idx2label = dict((v, k) for k, v in label2index.items())
-# # #
-# # #
-# predictions = loaded_model.predict_generator(test_generator,
-#                                        steps=test_generator.samples / test_generator.batch_size, verbose=1)
-# predicted_classes = np.argmax(predictions, axis=1)
-# # # # print(predicted_classes)
-# #
-# errors = np.where(predicted_classes != ground_truth)[0]
-# # print(errors)
-# print("No of errors = {}/{}".format(len(errors),test_generator.samples))
-
-
-# for j in range(len(errors)):
-#     pred_class = np.argmax(predictions[errors[i]])
-#     pred_label = idx2label[pred_class]
-#
-#     title = 'Original label:{}, Prediction :{}, confidence : {:.3f}, filename: {}'.format(
-#         fnames[errors[i]].split('/')[0],
-#         pred_label,
-#         predictions[errors[i]][pred_class], fnames[i])
-#     img = image.load_img('/Users/Christos/PycharmProjects/kerasnew/Christos/EXPERIMENT/' + '',
-#                          target_size=(224, 224))
-#     preds = predict(loaded_model, img)
-#     # #
-
-
-
-
-    # original = load_img('{}/{}'.format(TEST_DIR, fnames[errors[i]]))
-    # plt.figure(figsize=[9, 9])
-    # plt.axis('off')
-    # plt.title(title)
-    # plt.imshow(original)
-    # plt.show()
-#
-# for i in range(len(errors)):
-#     pred_class = np.argmax(predictions[errors[i]])
-#     pred_label = idx2label[pred_class]
-#
-#     title = 'Original label:{}, Prediction :{}, confidence : {:.3f}, filename: {}'.format(
-#         fnames[errors[i]].split('/')[0],
-#         pred_label,
-#         predictions[errors[i]][pred_class], fnames[i])
-#     print(fnames[errors[i]],predictions[errors[i]])
